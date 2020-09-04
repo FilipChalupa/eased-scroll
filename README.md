@@ -2,6 +2,8 @@
 
 Listen to eased window scroll. [Demo](https://filipchalupa.cz/eased-scroll/demo.html).
 
+![UI example](./screencast.gif)
+
 ## Installation
 
 ```bash
