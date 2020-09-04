@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<title>Eased scroll</title>
+		<style>
+			body {
+				position: relative;
+				margin: 0;
+				min-height: 400vh;
+				display: flex;
+				flex-wrap: wrap;
+				align-content: flex-start;
+				align-items: flex-start;
+				font-family: sans-serif;
+				padding-left: 50px;
+			}
+			h1 {
+				margin: 0;
+				text-align: center;
+				padding: 1em;
+				width: 100%;
+			}
+			h2 {
+				margin: 0;
+				padding: 1em 0;
+				min-height: 30vh;
+			}
+			.gradient {
+				margin: 0;
+				position: absolute;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				width: 50px;
+				align-self: stretch;
+				background-image: repeating-linear-gradient(
+					45deg,
+					#188fa7,
+					#9dbbae 15%,
+					#e2dbbe 20%
+				);
+			}
+			.progress {
+				width: 20%;
+				box-sizing: border-box;
+				padding: 0.5em;
+				text-align: center;
+			}
+			.progress:nth-of-type(1) {
+				background-color: #333333;
+				color: #ffffff;
+			}
+			.progress:nth-of-type(2) {
+				background-color: #666a86;
+				color: #ffffff;
+			}
+			.progress:nth-of-type(3) {
+				background-color: #95b8d1;
+			}
+			.progress:nth-of-type(4) {
+				background-color: #e8ddb5;
+			}
+			.progress:nth-of-type(5) {
+				background-color: #edafb8;
+			}
+			.value {
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Eased scroll</h1>
+		<p class="gradient"></p>
+		<div class="progress" data-smooth="0">
+			<h2>0</h2>
+			<div class="value"></div>
+		</div>
+		<div class="progress" data-smooth="100">
+			<h2>100</h2>
+			<div class="value"></div>
+		</div>
+		<div class="progress" data-smooth="200">
+			<h2>200</h2>
+			<div class="value"></div>
+		</div>
+		<div class="progress" data-smooth="300">
+			<h2>300</h2>
+			<div class="value"></div>
+		</div>
+		<div class="progress" data-smooth="500">
+			<h2>500</h2>
+			<div class="value"></div>
+		</div>
+		<script type="module">
+			import('./dist/index.js')
+				.catch(() =>
+					import('https://unpkg.com/eased-scroll@latest/dist/index.js')
+				)
+				.then((library) => {
+					const { easedScroll } = library
+					const tracks = document.querySelectorAll('.progress')
+
+					tracks.forEach((track, i) => {
+						const valueElement = track.querySelector('.value')
+						easedScroll(parseInt(track.dataset.smooth)).addListener((value) => {
+							const roundedValue = Math.round(value)
+							valueElement.style.paddingTop = `${roundedValue}px`
+							valueElement.innerText = roundedValue
+						})
+					})
+				})
+		</script>
+	</body>
+</html>
