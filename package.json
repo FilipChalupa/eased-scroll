@@ -1,6 +1,6 @@
 {
 	"name": "eased-scroll",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"description": "Listen to eased window scroll.",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
