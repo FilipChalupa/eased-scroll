@@ -22,3 +22,5 @@ easedScroll(200).addListener((value) => {
 	console.log('Smooth value', value)
 })
 ```
+
+For more advanced cases you get use methods `removeListener` and `getValue` too.
