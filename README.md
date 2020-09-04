@@ -7,3 +7,16 @@ Listen to eased window scroll. [Demo](https://filipchalupa.cz/eased-scroll/demo.
 ```bash
 npm install eased-scroll
 ```
+
+## How to use
+
+### JavaScript:
+
+```javascript
+import { easedScroll } from 'eased-scroll'
+
+easedScroll(200).addListener((value) => {
+	console.log('Actual value', window.scrollY)
+	console.log('Smooth value', value)
+})
+```
