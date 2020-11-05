@@ -2,7 +2,7 @@
 
 Listen to eased window scroll. [Demo](https://filipchalupa.cz/eased-scroll/demo.html).
 
-![UI example](./screencast.gif)
+![UI example](https://raw.githubusercontent.com/FilipChalupa/eased-scroll/main/screencast.gif)
 
 ## Installation
 
