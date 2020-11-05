@@ -94,9 +94,9 @@
 			<div class="value"></div>
 		</div>
 		<script type="module">
-			import('./dist/index.js')
+			import('./dist/index.es.js')
 				.catch(() =>
-					import('https://unpkg.com/eased-scroll@latest/dist/index.js')
+					import('https://unpkg.com/eased-scroll@latest/dist/index.es.js')
 				)
 				.then((library) => {
 					const { easedScroll } = library
