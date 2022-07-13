@@ -23,4 +23,4 @@ easedScroll(200).addListener((value) => {
 })
 ```
 
-For more advanced cases you get use methods `removeListener` and `getValue` too.
+For more advanced cases you can use methods `removeListener` and `getValue` too.
